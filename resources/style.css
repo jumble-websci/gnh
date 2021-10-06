@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Birthstone&family=Noto+Sans+Display:ital@0;1&display=swap');
 body {
   font-family: 'Noto Sans Display', sans-serif;
+  margin: 0;
 }
 
 /* For the homepage */
@@ -10,13 +11,9 @@ body {
 #homepageBody {
   background-image: url("images/peopleWorking.jpg");
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -73,9 +70,14 @@ body {
   width: 3em;
 }
 
-/* Cool looking buttons */
+/* Button Stuff */
 
-.coolButton {
+.buttonHolder {
+  text-align: center;
+  margin-top: 4vh;
+}
+
+.buttonHolder button {
   background-color: #fdeca6;
   border: none;
   color: black;
@@ -83,9 +85,73 @@ body {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: x-large;
   border-radius: .5em;
-  margin:auto;
+  margin: auto;
+  cursor: pointer;
+}
+
+.betweenButtons {
+  width: 3em;
+  display: inline-block;
+}
+
+/* Fancy grow for the buttons */
+
+.hvr-grow {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+/* More grow plus different color when hovered */
+
+.hvr-grow:hover, .hvr-grow:active {
+  background-color: #2098D1;
+  color: white;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* For the description */
+
+.mainPararaph {
+  text-align: center;
+}
+
+.mainPararaph p {
+  margin: 2vh 10vw 0 10vw;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 2em;
+  font-size: 2em;
+  color: white;
+}
+
+/* Main page footer */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  font-size: 1.3em;
+  padding-bottom: .3em;
+  padding-top: .3em;
+}
+
+.footer a {
+  padding: 1em;
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: rgb(91, 191, 224);
 }
 
 /* this is for the form stuff */
