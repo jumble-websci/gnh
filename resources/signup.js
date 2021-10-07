@@ -72,3 +72,25 @@ function check() {
         $('#location').html("");
     }
 }
+
+$(document).ready(function() {
+    $.ajax({
+        type:"POST",
+        url:"https://api.openweathermap.org/data/2.5/onecall?lat=42.73&lon=-73.68&exclude=minutely,hourly,daily,alerts&units=imperial&appid=904329b4887857a349c608a92182b8e6",
+        dataType:"json",
+        success: function(data, status) {
+            //do stuff here
+            output = "<p>";
+            output += data.current.temp +"&deg;";
+            output += "</p>";
+            output += "<p>";
+            output += "today's weather looks like: " + data.current.weather[0].description;
+            output += "</p>";
+            console.log(data);
+            // console.log(data.current.weather[0].description);
+            $('#weather').html(output);
+        }, error: function(msg) {
+            alert("There was a problem: " + msg.status + " " + msg.statusText);
+        }
+    });
+});
