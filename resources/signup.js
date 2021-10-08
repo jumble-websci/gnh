@@ -1,13 +1,11 @@
 // this file contains javascript for form validation and dynamically changing the signup page
-// it might also include ajax calls later
+// it also includes ajax calls for simple weather widget that tells us the weather at RPI
 
 function validate() {
     var form = document.getElementById("signupForm");
     var isValid = true;
     var msg = "Form is valid";
-    // alert("you clicked the owo button");
-    // console.log(form);
-    // console.log("'"+form.fName.value+"'");
+
     if (form.fName.value == "") {
         msg = "You must enter a first name\n";
         isValid = false;
@@ -62,24 +60,14 @@ function check() {
     if (loc.online.checked) {
         //ask for the persons webex room link
         var output = "<fieldset>";
-        output += "<legend>webex</legend>";
-        output += '<label type="field" for="webex">webex room link:</label>';
+        output += "<legend>Webex Info</legend>";
+        output += '<label type="field" for="webex">Webex room link:</label>';
         output += '<div class="value"><input type="text" id="webex" size="60px" placeholder="https://rensselaer.webex.com/meet/smithj12"></div>';
         output += '</fieldset>';
         $('#location').html(output);
     } else { //inperson is checked
         //make the div empty b/c theres no additional info needed
         $('#location').html("");
-    }
-}
-
-function weatherCheck(temp1, temp2) {
-    if (temp2 > temp1) {
-        return "decrease";
-    } else if (temp2 < temp1) {
-        return "increase";
-    } else {
-        return "won't really change";
     }
 }
 

@@ -10,12 +10,21 @@
     <title>GNH website signup page</title>
 </head>
 
-<body id="signup">
-    <p>this is the signup page of the gnh website</p>
-    <p>GNH holds weekly turoting session every Wednesday.</p>
+<body id="homepageBody">
+
+    <a href="../index.html"><img src="../resources/images/gnhLogo.png" class="gnhLogo" alt="GNH logo"></a>
+    <a href="https://science.rpi.edu/itws"><img src="../resources/images/itwsLogo.png" class="itwsLogo" alt="ITWS logo"></a>
+
+    <h1 class="homepageTitle">Weekly Tutoring Signup</h1>
+    <div class="page-wrap">
+
+
+
+    <p>GNH holds weekly turoting session every Wednesday starting from 1PM.</p>
+    <p>Please enter your information in the form so we can help you as soon as possible.</p>
+    
     <form action="" method="get" id="signupForm" onsubmit="validate()">
         <fieldset>
-            <legend>Title</legend>
             <div class="formData">
                 <label class="field" for="fName">First name:</label>
                 <div class="value"><input type="text" id="fName" placeholder="John"></div>
@@ -26,31 +35,34 @@
                 <label class="rcsid" for="rcsid">RSCid:</label>
                 <div class="value"><input type="text" id="rcsid" placeholder="smithj12"></div>
 
-                <input type="radio" name="online/inperson" id="online" onchange="check(this)"> 
-                <label for="online">Online</label>
+                
+                <label for="online" class="container">Online <input type="radio" name="online/inperson" id="online" onchange="check(this)"> 
+                    <span class="checkmark"></span>
+                </label>
 
-                <input type="radio" name="online/inperson" id="inperson" onchange="check(this)">
-                <label for="inperson">In Person</label>
+                
+                <label for="inperson" class="container">In Person<input type="radio" name="online/inperson" id="inperson" onchange="check(this)">
+                    <span class="checkmark"></span>
+                </label>
 
                 <div id="location">
                     <!-- add stuff via javascript depending on if online or in person -->
 
                 </div>
                 <!-- change the type to submit later so the form gets cleared on a valid submit -->
-                <button type="button" onclick="validate()">Submit</button>
-                
-
-
+                <span class="buttonHolder-small">
+                <button class="hvr-grow" type="submit">Submit</button>
+                </span>
             </div>
-           
-
         </fieldset>
-
     </form>
+
+</div>
+<span class="bottom-right">
     <span id="weather">
 
     </span>
-
+</span>
 
     
 </body>
