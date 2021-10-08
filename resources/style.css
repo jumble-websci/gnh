@@ -36,7 +36,7 @@ body {
   margin: auto;
   text-align: center;
   color: white;
-  font-size: 10em;
+  font-size: 20vh;
 }
 
 /* Socialmedia icon links */
@@ -48,8 +48,8 @@ body {
   text-align: center;
   padding: none;
   position: absolute;
-  top: 10em;
-  left: 40vw;
+  top: 20vh;
+  left: 37vw;
 }
 
 .socials ul {
@@ -81,11 +81,11 @@ body {
   background-color: #fdeca6;
   border: none;
   color: black;
-  padding: 15px 32px;
+  padding: 3vh 2vw;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: x-large;
+  font-size: 1.3vw;
   border-radius: .5em;
   margin: auto;
   cursor: pointer;
@@ -127,7 +127,7 @@ body {
   margin: 2vh 10vw 0 10vw;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 2em;
-  font-size: 2em;
+  font-size: 3.5vh;
   color: white;
 }
 
@@ -139,7 +139,7 @@ body {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   text-align: center;
-  font-size: 1.3em;
+  font-size: 2.5vh;
   padding-bottom: .3em;
   padding-top: .3em;
 }
