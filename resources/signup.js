@@ -1,13 +1,11 @@
 // this file contains javascript for form validation and dynamically changing the signup page
-// it might also include ajax calls later
+// it also includes ajax calls for simple weather widget that tells us the weather at RPI
 
 function validate() {
     var form = document.getElementById("signupForm");
     var isValid = true;
     var msg = "Form is valid";
-    // alert("you clicked the owo button");
-    // console.log(form);
-    // console.log("'"+form.fName.value+"'");
+
     if (form.fName.value == "") {
         msg = "You must enter a first name\n";
         isValid = false;
@@ -62,8 +60,8 @@ function check() {
     if (loc.online.checked) {
         //ask for the persons webex room link
         var output = "<fieldset>";
-        output += "<legend>webex</legend>";
-        output += '<label type="field" for="webex">webex room link:</label>';
+        output += "<legend>Webex Info</legend>";
+        output += '<label type="field" for="webex">Webex room link:</label>';
         output += '<div class="value"><input type="text" id="webex" size="60px" placeholder="https://rensselaer.webex.com/meet/smithj12"></div>';
         output += '</fieldset>';
         $('#location').html(output);
@@ -72,3 +70,35 @@ function check() {
         $('#location').html("");
     }
 }
+
+$(document).ready(function() {
+    $.ajax({
+        type:"POST",
+        url:"https://api.openweathermap.org/data/2.5/onecall?lat=42.73&lon=-73.68&exclude=minutely,hourly,alerts&units=imperial&appid=904329b4887857a349c608a92182b8e6",
+        dataType:"json",
+        success: function(data, status) {
+            //do stuff here
+            output = "";
+
+            output += '<span class="icon">';
+            output += '<img width="84" height="84" src="https://openweathermap.org/img/wn/'+    data.current.weather[0].icon + '@2x.png"> </span>';
+            output += '<span class="desc">';
+            output += '<span class="temp">' + data.current.temp +'&deg; &nbsp;'+ data.current.weather[0].description + '</span>';
+            output += '<span class="hl">';
+            output += '<span class="hl-labels"> Feels like:&nbsp;</span>';
+            output += '<span>' + data.current.feels_like + '&deg; &nbsp; </span>';
+            output += '<span class="hl-labels"> High:&nbsp;</span>';
+            output += '<span>' + data.daily[0].temp.max +'&deg; &nbsp;</span>';
+            output += '<span class="hl-labels"> Low:&nbsp; </span>';
+            output += '<span>' + data.daily[0].temp.min +'&deg; &nbsp;</span>';
+            output += '</span>';
+            output += '</span>';
+
+            console.log(data);
+            $('#weather').html(output);
+        }, error: function(msg) {
+            alert("There was a problem: " + msg.status + " " + msg.statusText);
+        }
+    });
+});
+
