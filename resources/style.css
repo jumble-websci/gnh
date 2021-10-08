@@ -18,14 +18,14 @@ body {
 }
 
 .gnhLogo {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 1.1vw;
   width: 10vw;
 }
 
 .itwsLogo {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 1.1vw;
   width: 10vw;
@@ -178,15 +178,6 @@ body {
   display:inline-block;
 }
 
-.desc {
-  font-weight: 600;
-  text-align: left;
-  position: relative;
-  top: 7px;
-  line-height: 1.3em;
-  margin-bottom: 15px;
-}
-
 #weather .hl {
   display: flex;
   font-weight: 300;
@@ -295,4 +286,134 @@ body {
   height: 8px;
   border-radius: 50%;
   background: white;
+}
+
+/* Activities/Events Page */
+
+
+/* sets overall background */
+#activitiesBody{
+  
+  background-color: burlywood;
+  background-size:cover;
+}
+
+
+/* Sets the picture to the background of the header */
+#pic{
+  background-image: url("./images/peopleWorking.jpg");
+  background-size:cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   
+}
+
+/* Background color to expose picture*/
+div.relative {
+  font-family: 'Birthstone', cursive;
+  position: relative;
+  font-size: 70px;
+  margin-top: 100px;
+  width: 950px;
+  height: 695px;
+  color:white;
+  background-image: url("./images/Blue.jpg");
+ 
+} 
+
+/* Expose Image */
+div.img {
+  position:absolute;
+  left: 175px;
+  width: 800px;
+  height: 600px;
+  background-image: url(../resources/images/companyexposelogo.jpg);
+  background-size: contain;
+}
+
+
+/* expose div  */
+div.expose {
+  background-image: url("./images/White.jpg");
+  top: 60px;
+  color:white;
+
+}
+
+/*tutoring info */
+div.Tutoring{
+background-color: burlywood;
+background-size: cover;
+opacity: .7;
+text-align: left;
+
+}
+
+/* newsletter table */
+#this-table{
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  margin-top: 5%;
+
+}
+
+/* block in table with info */
+.block{
+  font-size:40px;
+  font-family: 'Birthstone', cursive;
+  margin-right: 50px;
+  margin-left: 50px;
+  text-align: left;
+  color:navy;
+  }
+
+
+  /* emphasised text */
+b{
+  font-weight: bold;
+  color: white;
+  font-size: 25px;
+}
+
+/*text in tutoring info (border)*/
+p.round {
+  border: 2px solid navy;
+  padding: 5px;
+  background-color: burlywood;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  color:navy;
+
+}
+
+/* text in the news letter info*/
+p.letter {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size:30px;
+  width:60%
+}
+
+/* h2 css */
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 34px;
+  color:white;
+}
+
+
+/* Create the lines coming out of h2 */
+h2:before,
+h2:after {
+  content: '';
+  border-top: 4px solid;
+  margin: 0 20px 0 0;
+  flex: 1 0 20px;
+}
+
+h2:after {
+  margin: 0 0 0 20px;
 }
